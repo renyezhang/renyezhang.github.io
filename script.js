@@ -565,9 +565,21 @@ function showNovelContent(title, filePath) {
             <!-- 模态框头部 -->
             <div class="p-6 border-b border-gray-200 flex justify-between items-center">
                 <h3 class="text-2xl font-bold text-gray-800">${title}</h3>
-                <button onclick="this.closest('.fixed').remove()" class="text-gray-500 hover:text-gray-700 text-2xl">
-                    ×
-                </button>
+                <div class="flex items-center space-x-4">
+                    <!-- 字体大小调节按钮 -->
+                    <div class="flex items-center border border-gray-300 rounded-md overflow-hidden">
+                        <button id="decreaseFontBtn" class="w-8 h-8 flex items-center justify-center hover:bg-gray-100 text-gray-600">
+                            −
+                        </button>
+                        <span class="px-2 py-1 text-sm text-gray-500">字号</span>
+                        <button id="increaseFontBtn" class="w-8 h-8 flex items-center justify-center hover:bg-gray-100 text-gray-600">
+                            +
+                        </button>
+                    </div>
+                    <button onclick="this.closest('.fixed').remove()" class="text-gray-500 hover:text-gray-700 text-2xl">
+                        ×
+                    </button>
+                </div>
             </div>
             <!-- 模态框内容 -->
             <div class="p-6 overflow-y-auto flex-grow">
@@ -610,6 +622,26 @@ function showNovelContent(title, filePath) {
     modal.addEventListener('click', (e) => {
         if (e.target === modal) {
             modal.remove();
+        }
+    });
+    
+    // 字体大小调节功能
+    const novelContent = modal.querySelector('#novelContent');
+    let currentFontSize = 16; // 初始字体大小为16px
+    
+    // 减少字体大小
+    modal.querySelector('#decreaseFontBtn').addEventListener('click', () => {
+        if (currentFontSize > 12) { // 设置最小字体大小为12px
+            currentFontSize -= 1;
+            novelContent.style.fontSize = `${currentFontSize}px`;
+        }
+    });
+    
+    // 增加字体大小
+    modal.querySelector('#increaseFontBtn').addEventListener('click', () => {
+        if (currentFontSize < 24) { // 设置最大字体大小为24px
+            currentFontSize += 1;
+            novelContent.style.fontSize = `${currentFontSize}px`;
         }
     });
     
