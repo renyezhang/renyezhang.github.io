@@ -567,13 +567,12 @@ function showNovelContent(title, filePath) {
                 <h3 class="text-2xl font-bold text-gray-800">${title}</h3>
                 <div class="flex items-center space-x-4">
                     <!-- 字体大小调节按钮 -->
-                    <div class="flex items-center border border-gray-300 rounded-md overflow-hidden">
-                        <button id="decreaseFontBtn" class="w-8 h-8 flex items-center justify-center hover:bg-gray-100 text-gray-600">
-                            −
+                    <div class="flex items-center bg-gray-100 rounded-lg p-1 shadow-sm">
+                        <button id="decreaseFontBtn" class="w-10 h-10 rounded-md bg-white text-gray-700 font-bold hover:bg-gray-200 transition-colors flex items-center justify-center border border-gray-200">
+                            A−
                         </button>
-                        <span class="px-2 py-1 text-sm text-gray-500">字号</span>
-                        <button id="increaseFontBtn" class="w-8 h-8 flex items-center justify-center hover:bg-gray-100 text-gray-600">
-                            +
+                        <button id="increaseFontBtn" class="w-10 h-10 rounded-md bg-white text-gray-700 font-bold hover:bg-gray-200 transition-colors flex items-center justify-center border border-gray-200">
+                            A+
                         </button>
                     </div>
                     <button onclick="this.closest('.fixed').remove()" class="text-gray-500 hover:text-gray-700 text-2xl">
