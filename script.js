@@ -571,7 +571,7 @@ function showNovelContent(title, filePath) {
             </div>
             <!-- 模态框内容 -->
             <div class="p-6 overflow-y-auto flex-grow">
-                <div id="novelContent" class="prose prose-lg max-w-none" style="font-family: SimHei, STHeiti, 'Microsoft YaHei', sans-serif;">
+                <div id="novelContent" class="max-w-none" style="font-family: SimHei, STHeiti, 'Microsoft YaHei', sans-serif; font-size: 16px;">
                     ${filePath ? '<div class="text-center text-gray-500 py-12"><div class="inline-block animate-spin rounded-full h-8 w-8 border-4 border-gray-200 border-t-purple-600"></div><p class="mt-4">加载中...</p></div>' : '暂无内容'}
                 </div>
             </div>
@@ -589,16 +589,13 @@ function showNovelContent(title, filePath) {
                 // 将文本转换为HTML格式（段落和换行）
                 // 先处理不同格式的换行符，统一转换为\n
                 const normalizedText = text.replace(/\r\n/g, '\n'); // 将Windows换行符转换为Unix换行符
-                // 先处理段落（多个换行）
-                const paragraphs = normalizedText.split(/\n\n+/);
-                // 对每个段落内部的单个换行转换为<br>
+                // 按单换行符分割段落（每行作为一个段落）
+                const paragraphs = normalizedText.split(/\n/);
+                // 过滤空段落并去除首尾空白
                 const formattedParagraphs = paragraphs.map(para => {
-                    // 确保段落不为空
-                    if (!para.trim()) return '';
-                    // 直接转换换行，不添加缩进
-                    return para.replace(/\n/g, '<br>');
+                    return para.trim(); // 去除首尾空白
                 }).filter(para => para !== ''); // 过滤空段落
-                // 重新组合成HTML
+                // 重新组合成HTML，每个段落用独立的<p>标签包裹
                 const formattedContent = formattedParagraphs.join('</p><p>');
                 // 确保即使没有内容也有一个空的p标签或提示信息
                 contentElement.innerHTML = formattedParagraphs.length > 0 ? `<p>${formattedContent}</p>` : '<p>暂无内容</p>';
