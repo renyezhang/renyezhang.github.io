@@ -105,6 +105,15 @@ const papersData = [
 // 在这里添加、修改或删除小说，页面会自动更新
 const novelsData = [
     {
+        title: "记忆的死罪",
+        category: "短篇小说",
+        wordCount: "24153字",
+        description: "刑警成默公发现自己的记忆似乎被篡改，随着真相逐渐揭露，他必须面对内心最深的恐惧...",
+        tags: ["科幻", "悬疑"],
+        link: "#",
+        file: "Res/Novel/短篇/记忆的死罪.txt"
+    },
+    {
         title: "母亲的拼图",
         category: "短篇小说",
         wordCount: "约15000字",
