@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>个人博客 - 学术与技术分享</title>
+    <title>renyezhang</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         /* 自定义动画 */
@@ -253,55 +253,9 @@
                 <p class="text-gray-600">参与的各类竞赛及获奖情况</p>
             </div>
 
-            <div class="space-y-6">
-                <!-- 竞赛成果时间线 -->
-                <div class="relative pl-8 border-l-2 border-purple-200">
-                    <div class="absolute -left-2 top-0 w-4 h-4 rounded-full bg-purple-600"></div>
-                    <div class="card bg-white rounded-lg shadow-md p-6 mb-6 fade-in-up">
-                        <div class="flex items-start justify-between mb-3">
-                            <h3 class="text-xl font-semibold text-gray-800">全国大学生数学建模竞赛</h3>
-                            <span class="px-3 py-1 bg-yellow-100 text-yellow-800 text-sm font-medium rounded-full">一等奖</span>
-                        </div>
-                        <p class="text-sm text-gray-500 mb-3">2024年9月</p>
-                        <p class="text-gray-600 mb-4">项目描述：使用数据分析和优化算法解决实际问题，获得优异成绩...</p>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="px-3 py-1 bg-gray-100 text-gray-700 text-xs rounded-full">数据分析</span>
-                            <span class="px-3 py-1 bg-gray-100 text-gray-700 text-xs rounded-full">算法优化</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="relative pl-8 border-l-2 border-purple-200">
-                    <div class="absolute -left-2 top-0 w-4 h-4 rounded-full bg-purple-600"></div>
-                    <div class="card bg-white rounded-lg shadow-md p-6 mb-6 fade-in-up" style="animation-delay: 0.1s;">
-                        <div class="flex items-start justify-between mb-3">
-                            <h3 class="text-xl font-semibold text-gray-800">ACM国际大学生程序设计竞赛</h3>
-                            <span class="px-3 py-1 bg-gray-100 text-gray-800 text-sm font-medium rounded-full">银奖</span>
-                        </div>
-                        <p class="text-sm text-gray-500 mb-3">2024年5月</p>
-                        <p class="text-gray-600 mb-4">项目描述：团队协作解决算法难题，展现优秀的编程能力和团队配合...</p>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="px-3 py-1 bg-gray-100 text-gray-700 text-xs rounded-full">算法</span>
-                            <span class="px-3 py-1 bg-gray-100 text-gray-700 text-xs rounded-full">C++</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="relative pl-8 border-l-2 border-purple-200">
-                    <div class="absolute -left-2 top-0 w-4 h-4 rounded-full bg-purple-600"></div>
-                    <div class="card bg-white rounded-lg shadow-md p-6 mb-6 fade-in-up" style="animation-delay: 0.2s;">
-                        <div class="flex items-start justify-between mb-3">
-                            <h3 class="text-xl font-semibold text-gray-800">全国大学生创新创业大赛</h3>
-                            <span class="px-3 py-1 bg-red-100 text-red-800 text-sm font-medium rounded-full">铜奖</span>
-                        </div>
-                        <p class="text-sm text-gray-500 mb-3">2023年11月</p>
-                        <p class="text-gray-600 mb-4">项目描述：创新项目从构思到实现，展现了创业思维和项目管理能力...</p>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="px-3 py-1 bg-gray-100 text-gray-700 text-xs rounded-full">创新</span>
-                            <span class="px-3 py-1 bg-gray-100 text-gray-700 text-xs rounded-full">产品设计</span>
-                        </div>
-                    </div>
-                </div>
+            <div class="space-y-6" id="competitionsContainer">
+                <!-- 竞赛成果将通过 JavaScript 自动生成 -->
+                <!-- 如需添加新竞赛，请编辑 script.js 中的 competitionsData 数组 -->
             </div>
         </section>
 
@@ -314,67 +268,9 @@
                 <p class="text-gray-600">技术学习笔记与经验分享</p>
             </div>
 
-            <div class="grid md:grid-cols-2 gap-6">
-                <!-- 博客文章卡片 -->
-                <div class="card bg-white rounded-lg shadow-md overflow-hidden fade-in-up">
-                    <div class="h-48 bg-gradient-to-br from-purple-400 to-indigo-500 flex items-center justify-center">
-                        <span class="text-white text-6xl">📝</span>
-                    </div>
-                    <div class="p-6">
-                        <div class="flex items-center gap-2 mb-3">
-                            <span class="px-3 py-1 bg-purple-100 text-purple-700 text-xs rounded-full">前端开发</span>
-                            <span class="text-gray-400 text-sm">2024-01-15</span>
-                        </div>
-                        <h3 class="text-xl font-semibold text-gray-800 mb-2">深入理解 React Hooks 原理</h3>
-                        <p class="text-gray-600 mb-4">本文深入探讨 React Hooks 的实现原理，包括 useState、useEffect 等常用 Hooks 的底层机制...</p>
-                        <a href="#" class="text-purple-600 hover:text-purple-800 font-medium">阅读更多 →</a>
-                    </div>
-                </div>
-
-                <div class="card bg-white rounded-lg shadow-md overflow-hidden fade-in-up" style="animation-delay: 0.1s;">
-                    <div class="h-48 bg-gradient-to-br from-indigo-400 to-purple-500 flex items-center justify-center">
-                        <span class="text-white text-6xl">🚀</span>
-                    </div>
-                    <div class="p-6">
-                        <div class="flex items-center gap-2 mb-3">
-                            <span class="px-3 py-1 bg-indigo-100 text-indigo-700 text-xs rounded-full">性能优化</span>
-                            <span class="text-gray-400 text-sm">2024-01-10</span>
-                        </div>
-                        <h3 class="text-xl font-semibold text-gray-800 mb-2">前端性能优化实战指南</h3>
-                        <p class="text-gray-600 mb-4">从代码分割、懒加载到缓存策略，全面介绍前端性能优化的各种技巧和最佳实践...</p>
-                        <a href="#" class="text-purple-600 hover:text-purple-800 font-medium">阅读更多 →</a>
-                    </div>
-                </div>
-
-                <div class="card bg-white rounded-lg shadow-md overflow-hidden fade-in-up" style="animation-delay: 0.2s;">
-                    <div class="h-48 bg-gradient-to-br from-pink-400 to-purple-500 flex items-center justify-center">
-                        <span class="text-white text-6xl">💡</span>
-                    </div>
-                    <div class="p-6">
-                        <div class="flex items-center gap-2 mb-3">
-                            <span class="px-3 py-1 bg-pink-100 text-pink-700 text-xs rounded-full">设计模式</span>
-                            <span class="text-gray-400 text-sm">2024-01-05</span>
-                        </div>
-                        <h3 class="text-xl font-semibold text-gray-800 mb-2">JavaScript 设计模式详解</h3>
-                        <p class="text-gray-600 mb-4">介绍常用的 JavaScript 设计模式，包括单例模式、观察者模式、工厂模式等...</p>
-                        <a href="#" class="text-purple-600 hover:text-purple-800 font-medium">阅读更多 →</a>
-                    </div>
-                </div>
-
-                <div class="card bg-white rounded-lg shadow-md overflow-hidden fade-in-up" style="animation-delay: 0.3s;">
-                    <div class="h-48 bg-gradient-to-br from-blue-400 to-indigo-500 flex items-center justify-center">
-                        <span class="text-white text-6xl">🔧</span>
-                    </div>
-                    <div class="p-6">
-                        <div class="flex items-center gap-2 mb-3">
-                            <span class="px-3 py-1 bg-blue-100 text-blue-700 text-xs rounded-full">工具链</span>
-                            <span class="text-gray-400 text-sm">2023-12-28</span>
-                        </div>
-                        <h3 class="text-xl font-semibold text-gray-800 mb-2">现代前端工具链完全指南</h3>
-                        <p class="text-gray-600 mb-4">从包管理器到构建工具，全面了解现代前端开发的工具链生态...</p>
-                        <a href="#" class="text-purple-600 hover:text-purple-800 font-medium">阅读更多 →</a>
-                    </div>
-                </div>
+            <div class="grid md:grid-cols-2 gap-6" id="blogsContainer">
+                <!-- 博客文章将通过 JavaScript 自动生成 -->
+                <!-- 如需添加新博客，请编辑 script.js 中的 blogsData 数组 -->
             </div>
         </section>
     </main>

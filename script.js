@@ -100,6 +100,80 @@ const papersData = [
 ];
 
 // ====================================
+// 竞赛成果数据配置
+// ====================================
+// 在这里添加、修改或删除竞赛成果，页面会自动更新
+const competitionsData = [
+    {
+        title: "全国大学生数学建模竞赛",
+        award: "一等奖",
+        awardColor: "yellow", // yellow, gray, red
+        date: "2024年9月",
+        description: "项目描述:使用数据分析和优化算法解决实际问题，获得优异成绩...",
+        tags: ["数据分析", "算法优化"]
+    },
+    {
+        title: "ACM国际大学生程序设计竞赛",
+        award: "银奖",
+        awardColor: "gray",
+        date: "2024年5月",
+        description: "项目描述：团队协作解决算法难题，展现优秀的编程能力和团队配合...",
+        tags: ["算法", "C++"]
+    },
+];
+
+// ====================================
+// 博客数据配置
+// ====================================
+// 在这里添加、修改或删除博客文章，页面会自动更新
+const blogsData = [
+    {
+        title: "深入理解 React Hooks 原理",
+        category: "前端开发",
+        categoryColor: "purple", // purple, indigo, pink, blue
+        icon: "📝",
+        gradientFrom: "purple-400",
+        gradientTo: "indigo-500",
+        date: "2024-01-15",
+        description: "本文深入探讨 React Hooks 的实现原理，包括 useState、useEffect 等常用 Hooks 的底层机制...",
+        link: "#"
+    },
+    {
+        title: "前端性能优化实战指南",
+        category: "性能优化",
+        categoryColor: "indigo",
+        icon: "🚀",
+        gradientFrom: "indigo-400",
+        gradientTo: "purple-500",
+        date: "2024-01-10",
+        description: "从代码分割、懒加载到缓存策略，全面介绍前端性能优化的各种技巧和最佳实践...",
+        link: "#"
+    },
+    {
+        title: "JavaScript 设计模式详解",
+        category: "设计模式",
+        categoryColor: "pink",
+        icon: "💡",
+        gradientFrom: "pink-400",
+        gradientTo: "purple-500",
+        date: "2024-01-05",
+        description: "介绍常用的 JavaScript 设计模式，包括单例模式、观察者模式、工厂模式等...",
+        link: "#"
+    },
+    {
+        title: "现代前端工具链完全指南",
+        category: "工具链",
+        categoryColor: "blue",
+        icon: "🔧",
+        gradientFrom: "blue-400",
+        gradientTo: "indigo-500",
+        date: "2023-12-28",
+        description: "从包管理器到构建工具，全面了解现代前端开发的工具链生态...",
+        link: "#"
+    }
+];
+
+// ====================================
 // 小说作品数据配置
 // ====================================
 // 在这里添加、修改或删除小说，页面会自动更新
@@ -156,6 +230,86 @@ const novelsData = [
         link: "#"
     }
 ];
+
+// ====================================
+// 渲染竞赛成果
+// ====================================
+function renderCompetitions() {
+    const container = document.getElementById('competitionsContainer');
+    if (!container) return;
+
+    // 奖项颜色映射
+    const awardColors = {
+        yellow: { bg: 'bg-yellow-100', text: 'text-yellow-800' },
+        gray: { bg: 'bg-gray-100', text: 'text-gray-800' },
+        red: { bg: 'bg-red-100', text: 'text-red-800' }
+    };
+
+    // 生成HTML
+    container.innerHTML = competitionsData.map((competition, index) => {
+        const colors = awardColors[competition.awardColor] || awardColors.gray;
+
+        // 生成标签
+        const tagsHTML = competition.tags.map(tag =>
+            `<span class="px-3 py-1 bg-gray-100 text-gray-700 text-xs rounded-full">${tag}</span>`
+        ).join('');
+
+        return `
+            <div class="relative pl-8 border-l-2 border-purple-200">
+                <div class="absolute -left-2 top-0 w-4 h-4 rounded-full bg-purple-600"></div>
+                <div class="card bg-white rounded-lg shadow-md p-6 mb-6 fade-in-up" style="animation-delay: ${index * 0.1}s;">
+                    <div class="flex items-start justify-between mb-3">
+                        <h3 class="text-xl font-semibold text-gray-800">${competition.title}</h3>
+                        <span class="px-3 py-1 ${colors.bg} ${colors.text} text-sm font-medium rounded-full">${competition.award}</span>
+                    </div>
+                    <p class="text-sm text-gray-500 mb-3">${competition.date}</p>
+                    <p class="text-gray-600 mb-4">${competition.description}</p>
+                    <div class="flex flex-wrap gap-2">
+                        ${tagsHTML}
+                    </div>
+                </div>
+            </div>
+        `;
+    }).join('');
+}
+
+// ====================================
+// 渲染博客文章
+// ====================================
+function renderBlogs() {
+    const container = document.getElementById('blogsContainer');
+    if (!container) return;
+
+    // 分类颜色映射
+    const categoryColors = {
+        purple: { bg: 'bg-purple-100', text: 'text-purple-700' },
+        indigo: { bg: 'bg-indigo-100', text: 'text-indigo-700' },
+        pink: { bg: 'bg-pink-100', text: 'text-pink-700' },
+        blue: { bg: 'bg-blue-100', text: 'text-blue-700' }
+    };
+
+    // 生成HTML
+    container.innerHTML = blogsData.map((blog, index) => {
+        const colors = categoryColors[blog.categoryColor] || categoryColors.purple;
+
+        return `
+            <div class="card bg-white rounded-lg shadow-md overflow-hidden fade-in-up" style="animation-delay: ${index * 0.1}s;">
+                <div class="h-48 bg-gradient-to-br from-${blog.gradientFrom} to-${blog.gradientTo} flex items-center justify-center">
+                    <span class="text-white text-6xl">${blog.icon}</span>
+                </div>
+                <div class="p-6">
+                    <div class="flex items-center gap-2 mb-3">
+                        <span class="px-3 py-1 ${colors.bg} ${colors.text} text-xs rounded-full">${blog.category}</span>
+                        <span class="text-gray-400 text-sm">${blog.date}</span>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">${blog.title}</h3>
+                    <p class="text-gray-600 mb-4">${blog.description}</p>
+                    <a href="${blog.link}" class="text-purple-600 hover:text-purple-800 font-medium">阅读更多 →</a>
+                </div>
+            </div>
+        `;
+    }).join('');
+}
 
 // ====================================
 // 渲染小说卡片
@@ -377,6 +531,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // 生成小说卡片
     renderNovels();
+
+    // 生成竞赛成果
+    renderCompetitions();
+
+    // 生成博客文章
+    renderBlogs();
 
     // 初始化导航指示器位置
     function initNavIndicator() {
