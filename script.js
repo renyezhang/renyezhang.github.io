@@ -185,7 +185,7 @@ const novelsData = [
         category: "短篇小说",
         wordCount: "10190字",
         description: "我是在火星第237个任务日失踪的。沙尘暴来得毫无征兆,就像一堵赤红色的墙突然从地平线升起...",
-        tags: ["科幻", "悬疑"],
+        tags: ["科幻"],
         link: "#",
         file: "Res/Novel/短篇/收藏云朵.txt"
     },
