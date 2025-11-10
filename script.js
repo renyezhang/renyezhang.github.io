@@ -186,7 +186,7 @@ const novelsData = [
         wordCount: "10190字",
         description: "我是在火星第237个任务日失踪的。沙尘暴来得毫无征兆,就像一堵赤红色的墙突然从地平线升起...",
         tags: ["科幻"],
-        link: "#",
+        link: "https://mp.weixin.qq.com/s/xxLiKy95u8Q5kDL1TZ-b9A",
         file: "Res/Novel/短篇/收藏云朵.txt"
     },
     {
@@ -404,9 +404,14 @@ function renderNovels() {
                                 <div class="flex flex-wrap gap-2">
                                     ${tagsHTML}
                                 </div>
-                                <button onclick="showNovelContent('${novel.title}', '${novel.file ? novel.file : ''}')" class="text-purple-600 hover:text-purple-800 font-medium text-sm flex items-center gap-1">
-                                阅读 →
-                            </button>
+                                ${novel.link && novel.link !== '#' ? 
+                                    `<a href="${novel.link}" target="_blank" rel="noopener noreferrer" class="text-purple-600 hover:text-purple-800 font-medium text-sm flex items-center gap-1">
+                                        阅读 →
+                                    </a>` : 
+                                    `<button onclick="showNovelContent('${novel.title}', '${novel.file ? novel.file : ''}')" class="text-purple-600 hover:text-purple-800 font-medium text-sm flex items-center gap-1">
+                                        阅读 →
+                                    </button>`
+                                }
                             </div>
                         </div>
                     </div>
