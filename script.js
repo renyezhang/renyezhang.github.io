@@ -181,6 +181,15 @@ const blogsData = [
 // 在这里添加、修改或删除小说，页面会自动更新
 const novelsData = [
     {
+        title: "收藏云朵",
+        category: "短篇小说",
+        wordCount: "10190字",
+        description: "我是在火星第237个任务日失踪的。沙尘暴来得毫无征兆,就像一堵赤红色的墙突然从地平线升起...",
+        tags: ["科幻", "悬疑"],
+        link: "#",
+        file: "Res/Novel/短篇/收藏云朵.txt"
+    },
+    {
         title: "记忆的死罪",
         category: "短篇小说",
         wordCount: "24153字",
